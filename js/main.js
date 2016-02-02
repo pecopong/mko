@@ -16,6 +16,10 @@ var init = function(){
         'red' : ['확실히 컷을 못해 실려가지 말라고 국가가 인증하고 공기업에서 생산하는 가장 일반적인 도검. 성공률은 90퍼센트 이상이지만 간혹 불량품이 있기도 하다.', '최고급 명품 브랜드 “저스트두잍"의 장인의 도검. 성공률 99%. 순식간에 끝난다. 손목에 ‘저스트두잍’의 명품 로고가 각인된다.'],
         'green' : ['엉뚱한 약 먹고 실려가지 말라고 국가가 인증하고 공기업에서 생산하는 가장 일반적인 약물. 성공률은 90퍼센트 이상이지만 효과가 나오는데 까지 한시간 이상 걸린다.','최고급 명품 브랜드 “처음으로"의 장인의 수면제. 성공률 99%. 취하듯 꿈꾸듯이 갈 수 있다. 태초로 돌아가는 듯한 황홀경을 맛 본다고 한다']
     };
+    var bagborn = {
+        'nor':'국가가 인증하고 공기업에서 생산하여 대량보급하는 일반 바디백. 커다란 특징없이 실용적으로 만들어진 공산품이다.',
+        'brand' : '최고급 명품 브랜드 "굳이"의 디자이너 바디백. 아름다운 스텐실 패턴이 입혀진 명품이다. 시신의 품격을 높여주는 럭셔리한 백. 굳이 이런 명품백을 사야하나? 라는 생각은 버려라. 차원이 다른 명품 바디백 "굳이".'
+    };
 
     var arrRight = document.querySelector('#arrRight');
     var background = document.querySelector('#background');
@@ -151,26 +155,24 @@ var init = function(){
     }
 
     var page4 = function(){
-        wrap.innerHTML = '<img src="./data/background2.png"><div id="p3box" style="width:1536px; top:0px; position:absolute;"><img id="p4bg" src="./data/p2bg1.png" style="width:100%; top:0px;"><img id="p4item" src="" style="position:absolute; top:100px; left:500px; "><img id="p4arrowR" src="./data/p4L.png"><img id="p4arrowL" src="./data/p4R.png"></div><div style="position:absolute; top:1500px; left:470px; font-size:80px; font-family:sans-serif; width:1536px; height:10px;text-align:center; left:0px;">자살 방법을 선택해주세요.</div><img src="./data/arrRight.png" id="arrRight"><img src="./data/arrLeft.png" id="arrLeft"><div id="exptext" style="position:absolute; width:700px; top:1000px; left:420px; text-align:center; font-family:sans-serif; font-size:40px;"></div>';
+        wrap.innerHTML = '<img id="p4bg" src="./data/background2.png"><div id="p3box" style="width:1536px; top:0px; position:absolute;"><img id="p4item" src="" style="position:absolute; top:100px; left:500px; "><img id="p4arrowR" src="./data/p4L.png"><img id="p4arrowL" src="./data/p4R.png"></div><div style="position:absolute; top:1500px; left:470px; font-size:80px; font-family:sans-serif; width:1536px; height:10px;text-align:center; left:0px;">자살 방법을 선택해주세요.</div><img src="./data/arrRight.png" id="arrRight"><img src="./data/arrLeft.png" id="arrLeft"><div id="exptext" style="position:absolute; width:700px; top:1000px; left:420px; text-align:center; font-family:sans-serif; font-size:40px;"></div>';
         
         var p4bg = document.querySelector('#p4bg');
         var born = 0;
         var exptext = document.querySelector('#exptext');
 
+        p4bg.src = './data/bg'+obj.how+'.png';
+
         if(obj.how == 1){
-            p4bg.src = './data/p3bgy.png';
             p4item.src = './data/item1_nor.png';
             exptext.innerHTML = textborn.yellow[0];
         } else if(obj.how ==2){
-            p4bg.src = './data/p3bgb.png';
             p4item.src = './data/item2_nor.png';
             exptext.innerHTML = textborn.blue[0];
         } else if(obj.how ==3){
-            p4bg.src = './data/p3bgr.png';
             p4item.src = './data/item3_nor.png';
             exptext.innerHTML = textborn.red[0];
        } else if(obj.how ==4){
-            p4bg.src = './data/p3bgg.png';
             p4item.src = './data/item4_nor.png';
             exptext.innerHTML = textborn.green[0];
         }
@@ -262,23 +264,17 @@ var init = function(){
     }
 
     var page5 = function(){
-        wrap.innerHTML = '<img src="./data/background2.png"><div id="p3box" style="width:1536px; top:0px; position:absolute;"><img id="p4bg" src="./data/p2bg1.png" style="width:100%; top:0px;"><img id="p5item" src="" style="position:absolute; top:250px; left:500px; "><img id="p4arrowR" src="./data/p4L.png"><img id="p4arrowL" src="./data/p4R.png"><div id="exp" style="width:1000px; font-size:35px;"></div></div><div style="position:absolute; top:1500px; left:470px; font-size:80px; font-family:sans-serif; width:1536px; height:10px;text-align:center; left:0px;">바디백 (body bag)을 선택해주세요.<br>사후 시신 운반용입니다.</div><img src="./data/arrRight.png" id="arrRight"><img src="./data/arrLeft.png" id="arrLeft"><div id="text" style="position:absolute; text-align:center; font-family:sans-serif; width:1536px;></div>';        
-        var p4bg = document.querySelector('#p4bg');
+        wrap.innerHTML = '<img id="p5bg" src="./data/background2.png"><div id="p3box" style="width:1536px; top:0px; position:absolute;"><img id="p5item" src="" style="position:absolute; top:100px; left:500px; "><img id="p4arrowR" src="./data/p4L.png"><img id="p4arrowL" src="./data/p4R.png"><div id="exp" style="width:1000px; font-size:35px;"></div></div><div style="position:absolute; top:1500px; left:470px; font-size:80px; font-family:sans-serif; width:1536px; height:10px;text-align:center; left:0px;">바디백 (body bag)을 선택해주세요.<br>사후 시신 운반용입니다.</div><img src="./data/arrRight.png" id="arrRight"><img src="./data/arrLeft.png" id="arrLeft"><div id="text" style="position:absolute; text-align:center; font-family:sans-serif; width:1536px;"></div><div id="exptext" style="position:absolute; width:700px; top:1000px; left:420px; text-align:center; font-family:sans-serif; font-size:40px;"></div>';        
         var bag = 0;
         var text = document.querySelector('#text');
+        var p5bg = document.querySelector('#p5bg');
+        var exptext = document.querySelector('#exptext');
 
-        if(obj.how == 1){
-            p4bg.src = './data/p3bgy.png';
-        } else if(obj.how ==2){
-            p4bg.src = './data/p3bgb.png';
-        } else if(obj.how ==3){
-            p4bg.src = './data/p3bgr.png';
-        } else if(obj.how ==4){
-            p4bg.src = './data/p3bgg.png';
-        }
+        p5bg.src = './data/bg'+obj.how+'.png';
 
         var p5item = document.querySelector('#p5item');
         p5item.src = './data/bag_nor.png';
+        exptext.innerHTML = bagborn.nor;
         
         var p4arrowR = document.querySelector('#p4arrowR');
         var p4arrowL = document.querySelector('#p4arrowL');
@@ -286,10 +282,12 @@ var init = function(){
         p4arrowR.onclick = function(){
             if(bag == 0){
                 p5item.src = './data/bag_brand.png';
+                exptext.innerHTML = bagborn.brand;
                 bag = 1;
                 obj.bag = 1;
             } else {
                 p5item.src = './data/bag_nor.png';
+                exptext.innerHTML = bagborn.nor;
                 bag = 0;
                 obj.bag = 0;
             }
@@ -298,10 +296,12 @@ var init = function(){
         p4arrowL.onclick = function(){
             if(bag == 0){
                 p5item.src = './data/bag_brand.png';
+                exptext.innerHTML = bagborn.brand;
                 bag = 1;
                 obj.bag = 1;
             } else {
                 p5item.src = './data/bag_nor.png';
+                exptext.innerHTML = bagborn.nor;
                 bag = 0;
                 obj.bag = 0;
             }
@@ -348,7 +348,7 @@ var init = function(){
         }
     }
 
-    page1();
+    page4();
 };
 
 window.onload = init;
