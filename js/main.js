@@ -348,7 +348,7 @@ var init = function(){
         }
     }
 
-    page4();
+    page1();
 };
 
 window.onload = init;
